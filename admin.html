@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#121212">
+  <title>Administration · Lockset Vous</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-page">
+  <main class="admin-shell">
+    <header class="admin-header">
+      <a href="index.html" class="footer-brand" aria-label="Retour au site Lockset Vous">
+        <span>LOCKSET</span><strong>VOUS!!</strong>
+      </a>
+      <div class="admin-header-actions">
+        <a href="index.html" class="booking-back">← Retour au site</a>
+      </div>
+    </header>
+
+    <p class="admin-access-status" id="adminAccessStatus" role="status" aria-live="polite">Connexion à Firebase…</p>
+
+    <section class="admin-dashboard" id="adminDashboard" aria-labelledby="adminTitle">
+      <div class="admin-heading">
+        <div>
+          <span class="contact-eyebrow">Espace privé</span>
+          <h1 class="admin-title" id="adminTitle">Tableau de bord</h1>
+          <p class="admin-subtitle">Gérez la disponibilité du salon et consultez les demandes de rendez-vous.</p>
+        </div>
+        <div class="admin-date" id="adminToday"></div>
+      </div>
+
+      <section class="admin-status-card" aria-labelledby="salonStatusTitle">
+        <div class="admin-status-copy">
+          <span class="admin-card-eyebrow">Disponibilité</span>
+          <h2 id="salonStatusTitle">Statut du salon</h2>
+          <p id="adminStatusDescription">Chargement de la disponibilité du salon depuis Firebase…</p>
+        </div>
+        <div class="admin-status-control">
+          <span class="admin-current-status" id="adminCurrentStatus" aria-live="polite">Salon Ouvert</span>
+          <button class="admin-toggle" id="salonToggle" type="button" aria-pressed="true" disabled>
+            <span class="admin-toggle-knob"></span>
+            <span class="sr-only">Basculer le statut du salon</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="admin-appointments" aria-labelledby="appointmentsTitle">
+        <div class="admin-appointments-heading">
+          <div>
+            <span class="admin-card-eyebrow">Votre agenda</span>
+            <h2 id="appointmentsTitle">Demandes de rendez-vous</h2>
+          </div>
+          <span class="appointment-count" id="appointmentCount">0 demande</span>
+        </div>
+        <p class="admin-data-feedback" id="adminDataFeedback" aria-live="polite"></p>
+        <div class="appointment-list" id="appointmentList" aria-live="polite"></div>
+        <p class="admin-empty" id="appointmentsEmpty">Chargement des rendez-vous depuis Firebase…</p>
+      </section>
+
+      <p class="admin-cloud-note">Les demandes sont enregistrées dans Firebase Cloud Firestore et apparaissent ici en temps réel.</p>
+    </section>
+  </main>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

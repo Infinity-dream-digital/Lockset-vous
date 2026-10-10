@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#121212">
+  <title>Réserver un rendez-vous · Lockset Vous</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="booking-page">
+  <header class="booking-header">
+    <a href="index.html" class="footer-brand" aria-label="Lockset Vous, retour à l’accueil">
+      <span>LOCKSET</span><strong>VOUS!!</strong>
+    </a>
+    <a class="booking-back" href="index.html">← Retour au site</a>
+  </header>
+
+  <main class="booking-main">
+    <section class="booking-panel" aria-labelledby="bookingTitle">
+      <div class="booking-photo" role="img" aria-label="Portrait mettant en valeur des locks naturelles"></div>
+      <div class="booking-shade" aria-hidden="true"></div>
+      <div class="booking-content">
+        <div class="booking-intro">
+          <span class="contact-eyebrow">Votre prochain rituel commence ici</span>
+          <h1 class="contact-title" id="bookingTitle">Réservez votre moment.</h1>
+          <p class="contact-description">Dites-nous quel soin vous ferait plaisir et quand vous aimeriez venir. Nous vous recontacterons pour confirmer votre rendez-vous.</p>
+          <a class="booking-email" href="mailto:Locksetvous@email.com">Locksetvous@email.com</a>
+        </div>
+
+        <form class="contact-form booking-form" id="bookingForm">
+          <div class="booking-fields">
+            <div class="booking-field">
+              <label for="bookingName">Votre nom</label>
+              <input id="bookingName" name="name" type="text" placeholder="Ex. Aïcha" autocomplete="name" required>
+            </div>
+            <div class="booking-field">
+              <label for="bookingEmail">Votre e-mail</label>
+              <input id="bookingEmail" name="email" type="email" placeholder="vous@exemple.com" autocomplete="email" required>
+            </div>
+            <div class="booking-field">
+              <label for="bookingPhone">Votre téléphone</label>
+              <input id="bookingPhone" name="phone" type="tel" placeholder="Votre numéro" autocomplete="tel" required>
+            </div>
+            <div class="booking-field">
+              <label for="bookingService">Prestation souhaitée</label>
+              <select id="bookingService" name="service" required>
+                <option value="" disabled selected>Choisir une prestation</option>
+                <option value="Création & Départ">Création & Départ</option>
+                <option value="Entretien & Retwist">Entretien & Retwist</option>
+                <option value="Détox & Soin Profond">Détox & Soin Profond</option>
+                <option value="Autre / Conseil">Autre / Conseil</option>
+              </select>
+            </div>
+            <div class="booking-field">
+              <label for="bookingDate">Date souhaitée</label>
+              <input id="bookingDate" name="date" type="date" required>
+            </div>
+            <div class="booking-field">
+              <label for="bookingTime">Moment préféré</label>
+              <select id="bookingTime" name="time" required>
+                <option value="" disabled selected>Choisir un moment</option>
+                <option>Matin</option>
+                <option>Après-midi</option>
+                <option>Indifférent</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="bookingMessage">Un détail à nous partager ? <span>(facultatif)</span></label>
+          <textarea id="bookingMessage" name="message" rows="3" placeholder="Longueur, état de vos locks, questions…"></textarea>
+          <button class="contact-submit" type="submit">Envoyer ma demande <span aria-hidden="true">↗</span></button>
+          <p class="contact-form-note" id="bookingFeedback" aria-live="polite">Après configuration de Firebase, votre demande sera enregistrée dans le tableau de bord du salon.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="booking-footer">
+    <span>© <span id="bookingYear"></span> Lockset Vous</span>
+    <a href="index.html">Découvrir le salon</a>
+  </footer>
+  <script type="module" src="reservation.js"></script>
+</body>
+</html>
